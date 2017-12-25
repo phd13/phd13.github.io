@@ -1,0 +1,30 @@
+.canvas-container {
+    width: 875px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text-container {
+    width: 100%;
+    text-align: center;
+}
+
+.input, .span {
+    position: absolute;
+    width: 30px;
+    top: 20px;
+    display: none;
+}
+
+.sum-input {
+    position: absolute;
+    width: 30px;
+    top: 25px;
+    right: -10px;
+    display: none;
+}
+
+.text-wrapper {
+    position: relative;
+    display: inline-block;
+}
