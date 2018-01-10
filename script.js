@@ -1,10 +1,10 @@
 (function (window, document) {
-	var WIDTH = 875;
+	var WIDTH = 870;
 	var HEIGHT = 166;
 	var MAXNUM = 14;
 	var STEP = 39.5;
-	var KAPPA = .5522848;
-	var MARGIN_LEFT = 35;
+	var KAPPA = 0.555;
+	var MARGIN_LEFT = 36;
 	var STEPS = {
 		FIRST_PARAM: 0,
 		SECOND_PARAM: 1,
@@ -76,12 +76,14 @@
 				secondInput.style.left = secondSpan.style.left = MARGIN_LEFT + (a * STEP) + (b / 2 * STEP) - 15 + 'px';
 				firstInput.style.display = 'none';
 				firstSpan.style.display = 'block';
+				firstSpan.innerText = firstInput.value;
 				break;
 
 			case STEPS.SUM_PARAM:
 				scoreBoard(a, b);
 				secondInput.style.display = 'none';
 				secondSpan.style.display = 'block';
+				secondSpan.innerText = secondInput.value;
 				sumInput.style.display = 'block';
 				break;
 
@@ -103,7 +105,7 @@
 				step++;
 				renderStep();
 			} else {
-				event.target.style.borderColor = 'red';
+				event.target.style.color = 'red';
 			}
 		}
 	}
@@ -134,9 +136,9 @@
 		context.moveTo(xm, ym);
 		context.beginPath();
 		context.lineTo(xe, ym);
-		context.lineTo(xe - headlen * Math.cos(angle - Math.PI / 6), ym - headlen * Math.sin(angle - Math.PI / 6));
+		context.lineTo(xe - headlen * Math.cos(angle - Math.PI / 5), ym - headlen * Math.sin(angle - Math.PI / 5));
 		context.moveTo(xe, ym);
-		context.lineTo(xe - headlen * Math.cos(angle + Math.PI / 6), ym - headlen * Math.sin(angle + Math.PI / 6));
+		context.lineTo(xe - headlen * Math.cos(angle + Math.PI / 5), ym - headlen * Math.sin(angle + Math.PI / 5));
 		context.stroke();
 
 	}
